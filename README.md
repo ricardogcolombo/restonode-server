@@ -6,6 +6,12 @@ You should have installed
   - MongoDB
 
 ### Installation
+```
+This is going to run in localhost:3000, make sure that your port is not used by another apps.
+```
+
+You should have running mongodb before start.
+
 To install and start server just run
 ```sh
 $ yarn install 
