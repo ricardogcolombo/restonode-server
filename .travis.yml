@@ -1,7 +1,4 @@
 langauge: node_js
-install:
-  - npm -g i yarn
-  - yarn install
 cache:
   yarn: true
   directories:
