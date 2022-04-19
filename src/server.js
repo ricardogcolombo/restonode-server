@@ -9,7 +9,7 @@ setupMiddware(app)
 connect()
 // setup basic routing for index route
 
-app.use('/api', restRouter)
+app.use('/api/v1', restRouter)
 
 // catch all
 app.all('*', (req, res) => {

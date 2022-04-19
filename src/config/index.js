@@ -1,34 +1,21 @@
-import merge from 'lodash.merge'
-
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-const env = process.env.NODE_ENV
+let envConfig;
 
-const baseConfig = {
-  port: 3000,
-  secrets: {},
-  db: {
-    url: 'mongodb://localhost/restonode'
-  }
-}
-
-let envConfig = {}
-
-switch (env) {
-  case 'development':
-  case 'dev':
-    envConfig = require('./dev').config
-    break;
+switch (process.env.NODE_ENV ) {
   case 'test':
   case 'testing':
-    envConfig = require('./testing').config
+    envConfig = require('dotenv').config({path:'../.env.test'})
     break;
   case 'prod':
   case 'production':
-    envConfig = require('./prod').config
+    envConfig = require('dotenv').config({path:'../.env.test'})
   default:
-    envConfig = require('./dev').config
+    envConfig = require('dotenv').config({path:'../.env.dev'})
 }
-
-
-export default merge(baseConfig, envConfig)
+const baseConfig = {
+  expireTime: '30d',
+  secrets: {},
+  db:{url:`mongodb://${envConfig.DB_USER}:${envConfig.DB_PASSWORD}@${envConfig.DB_HOST}:${envConfig.DB_PORT}/${envConfig.DB_NAME}`}
+}
+export default baseConfig;
