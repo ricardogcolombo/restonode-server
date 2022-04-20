@@ -1,9 +1,8 @@
 import merge from 'lodash.merge'
 
 export const controllers = {
-    createOne(model, body) {
-        console.log(body);
-    return model.create(body)
+  createOne(model, body) {
+      return model.create(body)
   },
 
   updateOne(docToUpdate, update) {

@@ -30,10 +30,9 @@ function onError(error) {
   }
 }
 
-
-server.listen(3000, () => {
-	console.log('Server listening on port 3000')
-})
+	server.listen(3000, () => {
+		console.log('Server listening on port 3000')
+    })
 server.on('error', onError);
 
 if (module.hot) {

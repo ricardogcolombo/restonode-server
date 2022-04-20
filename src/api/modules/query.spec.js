@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import { dropDb } from '~/testhelpers'
 import { controllers } from './query'
 import { deliveries } from '../resources/deliveries/deliveries.model'

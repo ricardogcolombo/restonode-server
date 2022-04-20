@@ -4,38 +4,34 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "webpack ",
-        "start:dev": "NODE_ENV=dev webpack ",
+        "build": "rm -rf dist && webpack --mode development",
+        "start": "NODE_ENV='dev' node ./dist/main.js",
         "test:unit": "NODE_ENV=test jest ./tests",
         "test": "npm run test:unit"
     },
     "author": "Ricardo Colombo<ricardogcolombo@gmail.com>",
     "license": "MIT",
     "dependencies": {
+        "@babel/runtime": "^7.17.9",
+        "axios": "^0.26.1",
         "cookie-parser": "^1.4.6",
         "dotenv": "^16.0.0",
         "express": "^4.16.1",
         "http-errors": "^2.0.0",
         "lodash.merge": "^4.6.1",
+        "mongodb-memory-server": "^8.5.0",
         "mongoose": "^6.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.17.9",
+        "@babel/plugin-transform-runtime": "^7.17.0",
         "@babel/preset-env": "^7.16.11",
-        "babel-core": "^6.26.3",
         "babel-jest": "^27.5.1",
-        "babel-loader": "^7.1.2",
-        "babel-plugin-transform-regenerator": "^6.26.0",
-        "babel-plugin-transform-runtime": "^6.23.0",
-        "babel-preset-env": "^1.6.0",
-        "babel-preset-stage-0": "^6.24.1",
+        "babel-loader": "^8.2.4",
         "jest": "^27.5.1",
-        "raw-loader": "^0.5.1",
-        "source-map-support": "^0.5.0",
-        "start-server-webpack-plugin": "^2.2.0",
         "supertest": "^6.2.2",
         "webpack": "^5.72.0",
         "webpack-cli": "^4.9.2",
-        "webpack-node-externals": "^1.6.0"
+        "webpack-node-externals": "^3.0.0"
     }
 }
