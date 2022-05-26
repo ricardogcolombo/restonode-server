@@ -11,4 +11,4 @@ const setGlobalMiddleware = (app) => {
     });
 }
 
-export default setGlobalMiddleware
+module.exports = setGlobalMiddleware
